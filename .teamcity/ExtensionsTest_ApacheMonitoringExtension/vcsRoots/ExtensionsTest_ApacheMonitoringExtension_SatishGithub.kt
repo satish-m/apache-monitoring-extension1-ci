@@ -1,7 +1,7 @@
 package ExtensionsTest_ApacheMonitoringExtension.vcsRoots
 
-import jetbrains.buildServer.configs.kotlin.v2018_2.*
-import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
+import jetbrains.buildServer.configs.kotlin.v2017_2.*
+import jetbrains.buildServer.configs.kotlin.v2017_2.vcs.GitVcsRoot
 
 object ExtensionsTest_ApacheMonitoringExtension_SatishGithub : GitVcsRoot({
     uuid = "55347cb7-c1c1-4401-bf10-117b29ed16e9"
