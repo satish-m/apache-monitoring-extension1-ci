@@ -24,10 +24,10 @@ object Project : Project({
 
     features {
         versionedSettings {
-            id = "PROJECT_EXT_8"
+            id = "PROJECT_EXT_9"
             mode = VersionedSettings.Mode.ENABLED
             buildSettingsMode = VersionedSettings.BuildSettingsMode.PREFER_SETTINGS_FROM_VCS
-            rootExtId = ExtensionsTest_ApacheMonitoringExtension.Project.id
+            rootExtId = ExtensionsTest_ApacheMonitoringExtension_SatishGithub.id
             showChanges = false
             settingsFormat = VersionedSettings.Format.KOTLIN
             storeSecureParamsOutsideOfVcs = true
