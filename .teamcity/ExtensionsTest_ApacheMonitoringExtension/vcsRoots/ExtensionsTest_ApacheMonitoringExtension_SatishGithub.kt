@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.vcs.GitVcsRoot
 
 object ExtensionsTest_ApacheMonitoringExtension_SatishGithub : GitVcsRoot({
     uuid = "55347cb7-c1c1-4401-bf10-117b29ed16e9"
+    id = "ExtensionsTest_ApacheMonitoringExtension_SatishGithub"
     name = "SatishGithub-Apache1"
     url = "git@github.com:satish-m/apache-monitoring-extension1-ci.git"
     authMethod = uploadedKey {
