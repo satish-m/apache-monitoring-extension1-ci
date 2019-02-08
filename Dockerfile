@@ -1,4 +1,4 @@
-FROM appdynamics/machine:4.4 AS MA
+FROM appdynamics/machine:4.5 AS MA
 
 
 ADD target/ApacheMonitor-*.zip /opt/appdynamics/monitors
