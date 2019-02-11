@@ -103,7 +103,7 @@ public class MetricCheckIT {
         JsonNode jsonNode = mapper.readTree(response.toString());
 
         String metricName = jsonNode.get(0).get("metricName").getTextValue();
-        int metricValue = jsonNode.get(0).get("metricValues").get(0).get("value").getIntValue();
+        int metricValue = jsonNode.get(0).get("metricValues").get(0).get("current").getIntValue();
 
 
         Assert.assertEquals("Invalid metric name", "Custom Metrics|Apache|Apache1|HeartBeat", metricName);
@@ -147,7 +147,7 @@ public class MetricCheckIT {
         JsonNode jsonNode = mapper.readTree(response.toString());
 
         String metricName = jsonNode.get(0).get("metricName").getTextValue();
-        int metricValue = jsonNode.get(0).get("metricValues").get(0).get("value").getIntValue();
+        int metricValue = jsonNode.get(0).get("metricValues").get(0).get("current").getIntValue();
 
 
         Assert.assertEquals("Invalid metric name", "Custom Metrics|Apache|Apache1|Availability|Server Uptime (sec)", metricName);
