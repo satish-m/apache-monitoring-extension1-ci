@@ -32,18 +32,33 @@ public class MetricCheckIT {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
+    private static final String APPDYNAMICS_CONTROLLER_HOST_NAME_STRING = "APPDYNAMICS_CONTROLLER_HOST_NAME";
+    private static final String APPDYNAMICS_CONTROLLER_PORT_STRING = "APPDYNAMICS_CONTROLLER_PORT";
+    private static final String APPDYNAMICS_CONTROLLER_SSL_ENABLED_STRING = "APPDYNAMICS_CONTROLLER_SSL_ENABLED";
+    private static final String APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY_STRING = "APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY";
+
+    private static String CONTROLLER_HOST = null;
+    private static String CONTROLLER_PORT = null;
+    private static String CONTROLLER_SSL_ENABLED = null;
+    private static String CONTROLLER_ACCESS_KEY = null;
+
 
     @Before
     public void setup() {
 
         CredentialsProvider provider = new BasicCredentialsProvider();
         UsernamePasswordCredentials credentials
-                = new UsernamePasswordCredentials("admin@customer1", "admin");
+                = new UsernamePasswordCredentials("admin@customer1", CONTROLLER_ACCESS_KEY);
         provider.setCredentials(AuthScope.ANY, credentials);
 
         httpClient = HttpClientBuilder.create()
                 .setDefaultCredentialsProvider(provider)
                 .build();
+
+        CONTROLLER_HOST = System.getenv(APPDYNAMICS_CONTROLLER_HOST_NAME_STRING);
+        CONTROLLER_PORT = System.getenv(APPDYNAMICS_CONTROLLER_PORT_STRING);
+        CONTROLLER_SSL_ENABLED = System.getenv(APPDYNAMICS_CONTROLLER_SSL_ENABLED_STRING);
+        CONTROLLER_ACCESS_KEY = System.getenv(APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY_STRING);
 
     }
 
@@ -61,7 +76,7 @@ public class MetricCheckIT {
 
 
         UrlBuilder builder = UrlBuilder.builder();
-        builder.host("localhost").port(8090).ssl(false).path("controller/rest/applications/Server%20&%20Infrastructure%20Monitoring/metric-data");
+        builder.host(CONTROLLER_HOST).port(CONTROLLER_PORT).ssl(Boolean.valueOf(CONTROLLER_SSL_ENABLED)).path("controller/rest/applications/Server%20&%20Infrastructure%20Monitoring/metric-data");
         builder.query("metric-path", "Application%20Infrastructure%20Performance%7CRoot%7CCustom%20Metrics%7CApache%7CApache1%7CHeartBeat");
         builder.query("time-range-type", "BEFORE_NOW");
         builder.query("duration-in-mins", "60");
@@ -105,7 +120,7 @@ public class MetricCheckIT {
 
 
         UrlBuilder builder = UrlBuilder.builder();
-        builder.host("localhost").port(8090).ssl(false).path("controller/rest/applications/Server%20&%20Infrastructure%20Monitoring/metric-data");
+        builder.host(CONTROLLER_HOST).port(CONTROLLER_PORT).ssl(Boolean.valueOf(CONTROLLER_SSL_ENABLED)).path("controller/rest/applications/Server%20&%20Infrastructure%20Monitoring/metric-data");
         builder.query("metric-path", "Application%20Infrastructure%20Performance%7CRoot%7CCustom%20Metrics%7CApache%7CApache1%7CAvailability%7CServer%20Uptime%20%28sec%29");
         builder.query("time-range-type", "BEFORE_NOW");
         builder.query("duration-in-mins", "60");
