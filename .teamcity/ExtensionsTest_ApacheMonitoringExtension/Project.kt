@@ -18,7 +18,6 @@ object Project : Project({
     buildType(ExtensionsTest_ApacheMonitoringExtension_SetupInLinux)
     buildType(ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux)
     buildType(ExtensionsTest_ApacheMonitoringExtension_StopLinux)
-    buildType(ExtensionsTest_ApacheMonitoringExtension_Publish)
 
     features {
         versionedSettings {
@@ -36,7 +35,6 @@ object Project : Project({
             ExtensionsTest_ApacheMonitoringExtension_CleanBuild,
             ExtensionsTest_ApacheMonitoringExtension_SetupInLinux,
             ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux,
-            ExtensionsTest_ApacheMonitoringExtension_StopLinux,
-            ExtensionsTest_ApacheMonitoringExtension_Publish
+            ExtensionsTest_ApacheMonitoringExtension_StopLinux
     )
 })

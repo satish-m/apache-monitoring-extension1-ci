@@ -37,4 +37,8 @@ object ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux : BuildTy
         vcs {
         }
     }
+
+    artifactRules = """
+       target/ApacheMonitor-*.zip
+    """.trimIndent()
 })
