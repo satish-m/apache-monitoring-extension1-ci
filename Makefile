@@ -2,9 +2,8 @@ DOCKER_COMPOSE=sudo APPDYNAMICS_AGENT_ACCOUNT_NAME=$(APPDYNAMICS_AGENT_ACCOUNT_N
 DOCKER_RUN=$(DOCKER_COMPOSE) up -d --build
 DOCKER_STOP=$(DOCKER_COMPOSE) down
 dockerRun: ## Run MA in docker
-	printenv
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
-	echo ${DOCKER_RUN}
+	${DOCKER_RUN}
 	@echo started container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
 
 dockerStop:
