@@ -28,8 +28,4 @@ object ExtensionsTest_ApacheMonitoringExtension_CleanBuild : BuildType({
         vcs {
         }
     }
-
-    artifactRules = """
-       target/ApacheMonitor-*.zip
-    """.trimIndent()
 })

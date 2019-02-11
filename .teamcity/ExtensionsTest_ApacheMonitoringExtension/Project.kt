@@ -1,9 +1,6 @@
 package ExtensionsTest_ApacheMonitoringExtension
 
-import ExtensionsTest_ApacheMonitoringExtension.buildTypes.ExtensionsTest_ApacheMonitoringExtension_CleanBuild
-import ExtensionsTest_ApacheMonitoringExtension.buildTypes.ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux
-import ExtensionsTest_ApacheMonitoringExtension.buildTypes.ExtensionsTest_ApacheMonitoringExtension_SetupInLinux
-import ExtensionsTest_ApacheMonitoringExtension.buildTypes.ExtensionsTest_ApacheMonitoringExtension_StopLinux
+import ExtensionsTest_ApacheMonitoringExtension.buildTypes.*
 import ExtensionsTest_ApacheMonitoringExtension.vcsRoots.ExtensionsTest_ApacheMonitoringExtension_SatishGithub
 import jetbrains.buildServer.configs.kotlin.v2017_2.Project
 import jetbrains.buildServer.configs.kotlin.v2017_2.projectFeatures.VersionedSettings
@@ -21,6 +18,7 @@ object Project : Project({
     buildType(ExtensionsTest_ApacheMonitoringExtension_SetupInLinux)
     buildType(ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux)
     buildType(ExtensionsTest_ApacheMonitoringExtension_StopLinux)
+    buildType(ExtensionsTest_ApacheMonitoringExtension_Publish)
 
     features {
         versionedSettings {
@@ -38,6 +36,7 @@ object Project : Project({
             ExtensionsTest_ApacheMonitoringExtension_CleanBuild,
             ExtensionsTest_ApacheMonitoringExtension_SetupInLinux,
             ExtensionsTest_ApacheMonitoringExtension_IntegrationTestInLinux,
-            ExtensionsTest_ApacheMonitoringExtension_StopLinux
+            ExtensionsTest_ApacheMonitoringExtension_StopLinux,
+            ExtensionsTest_ApacheMonitoringExtension_Publish
     )
 })
