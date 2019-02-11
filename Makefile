@@ -6,7 +6,7 @@ dockerRun: ## Run MA in docker
 	sudo docker-compose config
 	@echo $(APPDYNAMICS_CONTROLLER_HOST_NAME)
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
-	# ${DOCKER_RUN}
+	${DOCKER_RUN}
 	@echo started container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
 
 dockerStop:
