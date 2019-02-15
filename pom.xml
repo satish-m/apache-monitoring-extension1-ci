@@ -293,6 +293,7 @@
                     </fileSets>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -311,7 +312,32 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://github.com/satish-m/my-maven-repo</url>
+        </repository>
+    </distributionManagement>
     <repositories>
         <repository>
             <id>github-maven-repo</id>
@@ -326,5 +352,7 @@
     </repositories>
     <scm>
         <connection>scm:git:https://github.com/satish-m/apache-monitoring-extension1-ci.git</connection>
+        <developerConnection>scm:git:git@github.com:satish-m/apache-monitoring-extension1-ci.git</developerConnection>
+
     </scm>
 </project>
