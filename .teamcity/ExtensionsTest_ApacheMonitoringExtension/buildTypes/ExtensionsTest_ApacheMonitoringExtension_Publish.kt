@@ -2,6 +2,7 @@ package ExtensionsTest_ApacheMonitoringExtension.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 
 /**
  * @author Satish Muddam
@@ -25,6 +26,11 @@ object ExtensionsTest_ApacheMonitoringExtension_Publish : BuildType({
             snapshot {
 
             }
+        }
+    }
+
+    triggers {
+        vcs {
         }
     }
 
