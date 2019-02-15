@@ -325,6 +325,6 @@
         </repository>
     </repositories>
     <scm>
-        <connection>scm:git:https://github.com/Appdynamics/apache-monitoring-extension.git</connection>
+        <connection>scm:git:https://github.com/satish-m/apache-monitoring-extension1-ci.git</connection>
     </scm>
 </project>
