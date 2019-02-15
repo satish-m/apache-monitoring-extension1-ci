@@ -20,6 +20,14 @@ object ExtensionsTest_ApacheMonitoringExtension_Publish : BuildType({
         }
     }
 
+    dependencies {
+        dependency(ExtensionsTest_ApacheMonitoringExtension_StopLinux) {
+            snapshot {
+
+            }
+        }
+    }
+
 
     artifactRules = """
        target/ApacheMonitor-*.zip
