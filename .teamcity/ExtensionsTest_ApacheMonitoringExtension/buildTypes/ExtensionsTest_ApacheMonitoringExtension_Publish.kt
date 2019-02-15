@@ -13,6 +13,10 @@ object ExtensionsTest_ApacheMonitoringExtension_Publish : BuildType({
     id = "ExtensionsTest_ApacheMonitoringExtension_Publish"
     name = "Publish build artifact"
 
+    vcs {
+        root(ExtensionsTest_ApacheMonitoringExtension.vcsRoots.ExtensionsTest_ApacheMonitoringExtension_SatishGithub)
+    }
+
     steps {
         maven {
             goals = "mvn github-release:release"
