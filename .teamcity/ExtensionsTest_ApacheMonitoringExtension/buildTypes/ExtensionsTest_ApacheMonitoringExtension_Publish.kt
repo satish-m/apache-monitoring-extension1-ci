@@ -19,7 +19,7 @@ object ExtensionsTest_ApacheMonitoringExtension_Publish : BuildType({
 
     steps {
         maven {
-            goals = "mvn github-release:release"
+            goals = "github-release:release"
             mavenVersion = defaultProvidedVersion()
             jdkHome = "%env.JDK_18%"
         }
